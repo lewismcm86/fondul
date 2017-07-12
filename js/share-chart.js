@@ -117,7 +117,8 @@
                     },
                     title: "Discount",
                     min: _self.mindata,
-                    max: _self.maxdata
+                    max: _self.maxdata, 
+                    opposite: true
                 },
                 {
                     labels: {
@@ -144,7 +145,6 @@
                     name: _self.options.seriesName,
                     data: _self.navData,
                     type: "area",
-                    yAxis: 1,
                     tooltip: {
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,
@@ -156,7 +156,7 @@
                     name: _self.options.secondSeriesName,
                     data: _self.distData,
                     type: "area",
-                    yAxis: 2,
+                    yAxis: 1,
                     tooltip: {
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,

@@ -151,7 +151,8 @@
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,
                         valuePrefix: _self.options.prefix
-                    }
+                    },
+                    fillOpacity: 0
                 },
                     {
                     name: _self.options.seriesName,
@@ -161,8 +162,7 @@
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,
                         valuePrefix: _self.options.prefix
-                    },
-                    fillOpacity: 0
+                    }
                 }
                
                 ]

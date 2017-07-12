@@ -56,8 +56,8 @@
 
                         if (typeof data.productsVO.priceDetVO !== 'undefined') {
 
-                            var navDet = data.productsVO.priceDetVO[0].navDet;
-                            var distDet = data.productsVO.priceDetVO[0].distDet;
+                            var navData = data.productsVO.priceDetVO[0].navData;
+                            var distData = data.productsVO.priceDetVO[0].distData;
                             var navData = [];
                             var distData = [];
 

@@ -141,18 +141,8 @@
                 credits: {
                     enabled: false
                 },
-                series: [{
-                    name: _self.options.seriesName,
-                    data: _self.navData,
-                    type: "area",
-                    tooltip: {
-                        pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
-                        valueDecimals: navDecimal,
-                        valuePrefix: _self.options.prefix
-                    },
-                    fillOpacity: 0
-                },
-                {
+                series: [
+                     {
                     name: _self.options.secondSeriesName,
                     data: _self.distData,
                     type: "area",
@@ -162,7 +152,19 @@
                         valueDecimals: navDecimal,
                         valuePrefix: _self.options.prefix
                     }
+                },
+                    {
+                    name: _self.options.seriesName,
+                    data: _self.navData,
+                    type: "area",
+                    tooltip: {
+                        pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                        valueDecimals: navDecimal,
+                        valuePrefix: _self.options.prefix
+                    },
+                    fillOpacity: 0
                 }
+               
                 ]
             });
         },

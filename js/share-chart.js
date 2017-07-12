@@ -61,7 +61,7 @@
 
                             var minSeries = Number.POSITIVE_INFINITY;
                             var maxSeries = Number.NEGATIVE_INFINITY;
-                            
+
 
                             _self.mindata = null;
                             _self.maxdata = null;
@@ -111,14 +111,22 @@
                     minRange: 24 * 3600000,
                     minTickInterval: 24 * 3600000
                 },
-                yAxis: {
+                yAxis: [{
                     labels: {
                         format: _self.options.prefix + '{value}'
                     },
-                    title: "",
+                    title: "Discount",
                     min: _self.mindata,
                     max: _self.maxdata
                 },
+                {
+                    labels: {
+                        format: _self.options.prefix + '{value}'
+                    },
+                    title: "TBD",
+                    min: _self.mindata,
+                    max: _self.maxdata
+                }],
                 plotOptions: {
                     series: {
                         marker: {
@@ -136,6 +144,7 @@
                     name: _self.options.seriesName,
                     data: _self.navData,
                     type: "area",
+                    yAxis: 1,
                     tooltip: {
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,
@@ -147,6 +156,7 @@
                     name: _self.options.secondSeriesName,
                     data: _self.distData,
                     type: "area",
+                    yAxis: 2,
                     tooltip: {
                         pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
                         valueDecimals: navDecimal,

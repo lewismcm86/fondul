@@ -58,8 +58,6 @@
 
                             var navData = data.productsVO.priceDetVO[0].navData;
                             var distData = data.productsVO.priceDetVO[0].distData;
-                            var navData = [];
-                            var distData = [];
 
                             var minSeries = Number.POSITIVE_INFINITY;
                             var maxSeries = Number.NEGATIVE_INFINITY;

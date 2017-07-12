@@ -56,27 +56,12 @@
 
                         if (typeof data.productsVO.priceDetVO !== 'undefined') {
 
-                            var navDet = data.productsVO.priceDetVO[0].navDet;
-                            var navData = [];
-                            var distData = [];
+                            var navData = data.productsVO.priceDetVO[0].discountData;
+                            var distData = data.productsVO.priceDetVO[0].shareData;
 
                             var minSeries = Number.POSITIVE_INFINITY;
                             var maxSeries = Number.NEGATIVE_INFINITY;
-
-                            // Loop through NAVs (series 1 data)
-                            for (var i = 1; i < navDet.length; i++) {
-                                var date = Date.parse(moment(navDet[i].navdt));//Date.parse(navDet[i].navdt.replace(/(\d{4})-(\d{2})-(\d{2})/, "$2 $3 $1"));
-                                if (parseFloat(navDet[i].nav) < minSeries) {
-                                    minSeries = parseFloat(navDet[i].nav);
-                                }
-                                if (parseFloat(navDet[i].nav) > maxSeries) {
-                                    maxSeries = parseFloat(navDet[i].nav);
-                                }
-                                navData.push([date, parseFloat(navDet[i].nav)]);
-                                // temp second series
-
-                                distData.push([date, parseFloat(navDet[i].nav - 4 * i / 2)]);
-                            }
+                            
 
                             _self.mindata = null;
                             _self.maxdata = null;

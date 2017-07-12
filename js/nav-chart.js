@@ -63,30 +63,7 @@
 
                             var minSeries = Number.POSITIVE_INFINITY;
                             var maxSeries = Number.NEGATIVE_INFINITY;
-
-                            // Loop through NAVs (series 1 data)
-                            for (var i = 1; i < navDet.length; i++) {
-                                var date = Date.parse(moment(navDet[i].navdt));//Date.parse(navDet[i].navdt.replace(/(\d{4})-(\d{2})-(\d{2})/, "$2 $3 $1"));
-                                if (parseFloat(navDet[i].nav) < minSeries) {
-                                    minSeries = parseFloat(navDet[i].nav);
-                                }
-                                if (parseFloat(navDet[i].nav) > maxSeries) {
-                                    maxSeries = parseFloat(navDet[i].nav);
-                                }
-                                navData.push([date, parseFloat(navDet[i].nav)]);
-                            }
-
-                             // Loop through Dist (series 1 data)
-                            for (var j = 1; j < distDet.length; j++) {
-                                var date = Date.parse(moment(distDet[j].navdt));//Date.parse(navDet[i].navdt.replace(/(\d{4})-(\d{2})-(\d{2})/, "$2 $3 $1"));
-                                if (parseFloat(distDet[j].nav) < minSeries) {
-                                    minSeries = parseFloat(distDet[j].nav);
-                                }
-                                if (parseFloat(distDet[j].nav) > maxSeries) {
-                                    maxSeries = parseFloat(distDet[j].nav);
-                                }
-                                distData.push([date, parseFloat(distDet[j].nav - 1)]);
-                            }
+                            
 
                             _self.mindata = null;
                             _self.maxdata = null;
